@@ -19,9 +19,15 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 from usersapp.views import UserModelViewSet
+from todoapp.views import ProjectModelViewSet, TODOModelViewSet
+
+app_name = 'webTODO'
 
 router = DefaultRouter()
-router.register('usersapp', UserModelViewSet)
+router.register('users', UserModelViewSet)
+router.register('projects', ProjectModelViewSet)
+router.register('todo', TODOModelViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
